@@ -1,0 +1,1597 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="戦略的クリエイティブ運用の内製化で広告効果を最大化。年間1000万円のコスト削減と制作スピード65%向上を実現">
+    <meta name="keywords" content="インハウス支援,クリエイティブ制作,広告運用,内製化,生成AI,WEBマーケティング">
+    <title>InHouse Creative Studio | 戦略的クリエイティブ広告運用の完全内製化支援 - 株式会社CYANd</title>
+    
+    <style>
+        /* ========================================
+           リセットCSS & 基本設定
+        ======================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-color: #0066FF;
+            --secondary-color: #00D4FF;
+            --accent-color: #FF6B35;
+            --dark-text: #1a1a1a;
+            --light-text: #666666;
+            --bg-light: #f8f9fa;
+        }
+        
+        body {
+            font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-text);
+            background: #fff;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* ========================================
+           ヘッダー
+        ======================================== */
+        header {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+        
+        .nav-menu a {
+            color: var(--dark-text);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--primary-color);
+        }
+        
+        .cta-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .cta-header:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 102, 255, 0.3);
+        }
+        
+        /* ========================================
+           ヒーローセクション
+        ======================================== */
+        .hero {
+            background: linear-gradient(135deg, #0066FF 0%, #00D4FF 100%);
+            padding: 150px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 2px, transparent 2px);
+            background-size: 60px 60px;
+            animation: float 30s linear infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            100% { transform: translate(-60px, -60px) rotate(360deg); }
+        }
+        
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-text {
+            color: white;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            line-height: 1.3;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+        
+        .hero-subtitle {
+            font-size: 20px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+        
+        .hero-points {
+            list-style: none;
+            margin-bottom: 40px;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+        
+        .hero-points li {
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .hero-points li::before {
+            content: '✓';
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 24px;
+            margin-right: 15px;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            animation: fadeInUp 1s ease 0.8s both;
+        }
+        
+        .btn-primary {
+            background: white;
+            color: var(--primary-color);
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: bold;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 15px 40px;
+            border: 2px solid white;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .hero-visual {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+            animation: fadeInRight 1s ease 0.5s both;
+        }
+        
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        
+        .hero-stat {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+        }
+        
+        .hero-stat-number {
+            font-size: 36px;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 5px;
+        }
+        
+        .hero-stat-label {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        /* ========================================
+           問題提起セクション
+        ======================================== */
+        .problems {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        
+        .section-title {
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: var(--dark-text);
+        }
+        
+        .section-subtitle {
+            font-size: 18px;
+            color: var(--light-text);
+        }
+        
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .problem-card {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 5px solid var(--accent-color);
+            transition: transform 0.3s ease;
+        }
+        
+        .problem-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .problem-icon {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+        
+        .problem-card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
+        
+        .problem-card p {
+            color: var(--light-text);
+            line-height: 1.8;
+        }
+        
+        /* ========================================
+           ソリューションセクション
+        ======================================== */
+        .solution {
+            padding: 100px 0;
+            background: var(--bg-light);
+        }
+        
+        .solution-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            margin-top: 60px;
+        }
+        
+        .solution-text h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: var(--dark-text);
+        }
+        
+        .solution-text p {
+            font-size: 18px;
+            color: var(--light-text);
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+        
+        .solution-features {
+            list-style: none;
+        }
+        
+        .solution-features li {
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(0, 102, 255, 0.1);
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .solution-features li::before {
+            content: '✓';
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        .solution-visual {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        }
+        
+        .framework-card {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .framework-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .framework-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+        
+        .framework-list li {
+            font-size: 14px;
+            color: var(--light-text);
+        }
+        
+        /* ========================================
+           カリキュラムセクション
+        ======================================== */
+        .curriculum {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .phase-timeline {
+            position: relative;
+            margin-top: 60px;
+        }
+        
+        .phase-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
+            transform: translateX(-50%);
+        }
+        
+        .phase-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 80px;
+            position: relative;
+        }
+        
+        .phase-item:nth-child(even) {
+            direction: rtl;
+        }
+        
+        .phase-item:nth-child(even) > * {
+            direction: ltr;
+        }
+        
+        .phase-content {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .phase-number {
+            position: absolute;
+            left: 50%;
+            top: 30px;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            box-shadow: 0 10px 30px rgba(0, 102, 255, 0.3);
+        }
+        
+        .phase-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        .phase-duration {
+            color: var(--light-text);
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        
+        .phase-content ul {
+            list-style: none;
+        }
+        
+        .phase-content li {
+            padding: 8px 0;
+            color: var(--light-text);
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .phase-content li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+        
+        /* ========================================
+           価格セクション
+        ======================================== */
+        .pricing {
+            padding: 100px 0;
+            background: var(--bg-light);
+        }
+        
+        .pricing-table {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+        
+        .price-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .price-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+        
+        .price-card.featured {
+            border: 2px solid var(--primary-color);
+        }
+        
+        .price-card.featured::before {
+            content: 'おすすめ';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 5px 25px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        .plan-name {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: var(--dark-text);
+        }
+        
+        .plan-target {
+            font-size: 14px;
+            color: var(--light-text);
+            margin-bottom: 30px;
+        }
+        
+        .plan-price {
+            font-size: 48px;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .plan-price span {
+            font-size: 16px;
+            color: var(--light-text);
+        }
+        
+        .plan-features {
+            list-style: none;
+            margin: 30px 0;
+            text-align: left;
+        }
+        
+        .plan-features li {
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+            color: var(--light-text);
+        }
+        
+        .plan-features li::before {
+            content: '✓';
+            color: #4caf50;
+            margin-right: 10px;
+        }
+        
+        .plan-button {
+            display: inline-block;
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .plan-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 102, 255, 0.3);
+        }
+        
+        /* ========================================
+           比較セクション
+        ======================================== */
+        .comparison {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .comparison-table {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            margin-top: 60px;
+        }
+        
+        .comparison-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .comparison-table thead {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+        }
+        
+        .comparison-table th:first-child,
+        .comparison-table td:first-child {
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .comparison-table .highlight {
+            background: #e3f2fd;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        /* ========================================
+           成果セクション
+        ======================================== */
+        .results {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+        }
+        
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .result-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .result-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .result-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            color: white;
+        }
+        
+        .result-number {
+            font-size: 48px;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .result-label {
+            font-size: 16px;
+            color: var(--light-text);
+        }
+        
+        /* ========================================
+           事例セクション
+        ======================================== */
+        .case-studies {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .case-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .case-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .case-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .case-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 30px;
+        }
+        
+        .case-company {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        .case-industry {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        .case-body {
+            padding: 30px;
+        }
+        
+        .case-challenge {
+            margin-bottom: 20px;
+        }
+        
+        .case-challenge h4 {
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+        
+        .case-results {
+            background: var(--bg-light);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        .case-results h4 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .case-metric {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .case-metric:last-child {
+            border-bottom: none;
+        }
+        
+        .case-metric-label {
+            color: var(--light-text);
+        }
+        
+        .case-metric-value {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        /* ========================================
+           CTAセクション
+        ======================================== */
+        .cta {
+            padding: 120px 0;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 2px, transparent 2px);
+            background-size: 50px 50px;
+            animation: float 20s linear infinite;
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cta h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+        
+        .cta-form {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .cta-input {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+        }
+        
+        .cta-submit {
+            padding: 15px 40px;
+            background: white;
+            color: var(--primary-color);
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .cta-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .cta-note {
+            margin-top: 20px;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        /* ========================================
+           フッター
+        ======================================== */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .footer-column p {
+            color: #999;
+            line-height: 1.8;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            padding: 8px 0;
+        }
+        
+        .footer-column ul li a {
+            color: #999;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 30px;
+            text-align: center;
+            color: #666;
+        }
+        
+        /* ========================================
+           アニメーション
+        ======================================== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* ========================================
+           レスポンシブ
+        ======================================== */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .solution-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .phase-timeline::before {
+                display: none;
+            }
+            
+            .phase-item {
+                grid-template-columns: 1fr;
+            }
+            
+            .phase-number {
+                position: static;
+                margin: 0 auto 20px;
+            }
+            
+            .pricing-table {
+                grid-template-columns: 1fr;
+            }
+            
+            .comparison-table {
+                overflow-x: auto;
+            }
+            
+            .cta-form {
+                flex-direction: column;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">InHouse Creative Studio</div>
+                <ul class="nav-menu">
+                    <li><a href="#problem">課題</a></li>
+                    <li><a href="#solution">ソリューション</a></li>
+                    <li><a href="#curriculum">カリキュラム</a></li>
+                    <li><a href="#pricing">料金</a></li>
+                    <li><a href="#results">実績</a></li>
+                </ul>
+                <a href="#contact" class="cta-header">無料相談</a>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- ヒーローセクション -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-badge">クリエイティブ特化型インハウス支援</div>
+                    <h1>「数打てば当たる」から<br>「戦略で必ず当てる」<br>クリエイティブ運用へ</h1>
+                    <p class="hero-subtitle">戦略的クリエイティブ運用の内製化で<br>WEB広告効果の70%を決める要因をコントロール</p>
+                    <ul class="hero-points">
+                        <li>クリエイティブ制作の戦略不在を解決</li>
+                        <li>外注による高コストと遅いPDCAサイクルを改善</li>
+                        <li>再現性のない場当たり的制作から脱却</li>
+                    </ul>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn-primary">無料相談を申し込む</a>
+                        <a href="#solution" class="btn-secondary">詳しく見る</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-stats">
+                        <div class="hero-stat">
+                            <div class="hero-stat-number">年間1,000万円</div>
+                            <div class="hero-stat-label">コスト削減効果</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="hero-stat-number">65%</div>
+                            <div class="hero-stat-label">制作時間短縮</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="hero-stat-number">32%</div>
+                            <div class="hero-stat-label">CPA改善率</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="hero-stat-number">2.1倍</div>
+                            <div class="hero-stat-label">ROAS向上</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 問題提起セクション -->
+    <section class="problems" id="problem">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-badge">PROBLEM</div>
+                <h2 class="section-title">こんな課題を抱えていませんか？</h2>
+                <p class="section-subtitle">多くの企業が直面するクリエイティブ運用の問題</p>
+            </div>
+            <div class="problem-grid">
+                <div class="problem-card fade-in">
+                    <div class="problem-icon">😰</div>
+                    <h3>戦略なきクリエイティブ制作</h3>
+                    <p>「とりあえず作ってみる」の繰り返しで、なぜ成功したのか、なぜ失敗したのかが分からない</p>
+                </div>
+                <div class="problem-card fade-in">
+                    <div class="problem-icon">💸</div>
+                    <h3>外注コストの肥大化</h3>
+                    <p>バナー1枚5万円、動画1本30万円...月間制作費が数百万円に膨れ上がっている</p>
+                </div>
+                <div class="problem-card fade-in">
+                    <div class="problem-icon">🐌</div>
+                    <h3>遅いPDCAサイクル</h3>
+                    <p>外注だと納品まで1週間。市場の変化に追いつけず、競合に遅れを取っている</p>
+                </div>
+                <div class="problem-card fade-in">
+                    <div class="problem-icon">🎲</div>
+                    <h3>再現性のない制作</h3>
+                    <p>成功パターンが体系化されておらず、毎回ゼロから考え直している</p>
+                </div>
+                <div class="problem-card fade-in">
+                    <div class="problem-icon">📊</div>
+                    <h3>データ分析の不足</h3>
+                    <p>なんとなくの感覚で判断。科学的な検証プロセスが確立されていない</p>
+                </div>
+                <div class="problem-card fade-in">
+                    <div class="problem-icon">🤖</div>
+                    <h3>AI活用の遅れ</h3>
+                    <p>生成AIの可能性は感じているが、実務での活用方法が分からない</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ソリューションセクション -->
+    <section class="solution" id="solution">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-badge">SOLUTION</div>
+                <h2 class="section-title">戦略的クリエイティブ運用の完全内製化</h2>
+                <p class="section-subtitle">実績に基づく独自フレームワークで、再現性のある成果を実現</p>
+            </div>
+            <div class="solution-grid">
+                <div class="solution-text fade-in">
+                    <h2>業界唯一の体系化された<br>クリエイティブ戦略フレームワーク</h2>
+                    <p>D2Cブランドの年商10億円突破パターンを分析し、50社以上のROAS・CPA改善データから導き出した独自メソッドを提供</p>
+                    <ul class="solution-features">
+                        <li>四次元検証フレームワーク（コピー×素材×デザイン×時間軸）による科学的検証</li>
+                        <li>Who×What戦略設計による再現性の確保</li>
+                        <li>5つの価値要素による感情設計（メリット・ベネフィット・ユニークネス・シンパシー・オファー）</li>
+                        <li>生成AI活用による制作コスト50〜90%削減</li>
+                    </ul>
+                </div>
+                <div class="solution-visual fade-in">
+                    <div class="framework-card">
+                        <h4>🎯 四次元検証フレームワーク</h4>
+                        <ul class="framework-list">
+                            <li>• コピー検証</li>
+                            <li>• 素材検証</li>
+                            <li>• デザイン検証</li>
+                            <li>• 時間軸検証</li>
+                        </ul>
+                    </div>
+                    <div class="framework-card">
+                        <h4>📊 8ステップ運用サイクル</h4>
+                        <ul class="framework-list">
+                            <li>• 戦略設計</li>
+                            <li>• 戦術・施策</li>
+                            <li>• 実制作</li>
+                            <li>• 配信・検証</li>
+                            <li>• 推進</li>
+                            <li>• 結果把握</li>
+                            <li>• 分析・考察</li>
+                            <li>• ナレッジ化</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- カリキュラムセクション -->
+    <section class="curriculum" id="curriculum">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-badge">CURRICULUM</div>
+                <h2 class="section-title">6ヶ月で完全内製化を実現</h2>
+                <p class="section-subtitle">段階的に実践力を身につける体系的カリキュラム</p>
+            </div>
+            <div class="phase-timeline">
+                <div class="phase-item fade-in">
+                    <div class="phase-content">
+                        <div class="phase-number">1</div>
+                        <h3 class="phase-title">Phase 1: 戦略基盤構築</h3>
+                        <p class="phase-duration">1-2ヶ月目</p>
+                        <ul>
+                            <li>4C分析による独自価値提案の明確化</li>
+                            <li>N1インタビューによるターゲット解像度向上</li>
+                            <li>コミュニケーションコンセプトの確立</li>
+                            <li>制作体制構築とパートナー選定</li>
+                        </ul>
+                    </div>
+                    <div></div>
+                </div>
+                <div class="phase-item fade-in">
+                    <div></div>
+                    <div class="phase-content">
+                        <div class="phase-number">2</div>
+                        <h3 class="phase-title">Phase 2: 実践スキル習得</h3>
+                        <p class="phase-duration">3-4ヶ月目</p>
+                        <ul>
+                            <li>四次元検証フレームワーク習得</li>
+                            <li>コピー表現の型とパフォーマンス分析</li>
+                            <li>生成AI活用による制作効率化</li>
+                            <li>プロンプト設計とライブラリ構築</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="phase-item fade-in">
+                    <div class="phase-content">
+                        <div class="phase-number">3</div>
+                        <h3 class="phase-title">Phase 3: 自走体制確立</h3>
+                        <p class="phase-duration">5-6ヶ月目</p>
+                        <ul>
+                            <li>8ステップサイクルの定着化</li>
+                            <li>自動レポート・アラートシステム構築</li>
+                            <li>KSF・KLF可視化による勝ちパターン発見</li>
+                            <li>記事LP・アンケートLP制作スキル</li>
+                        </ul>
+                    </div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 価格セクション -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-badge">PRICING</div>
+                <h2 class="section-title">企業規模に合わせた料金プラン</h2>
+                <p class="section-subtitle">6ヶ月契約で確実な成果を実現</p>
+            </div>
+            <div class="pricing-table">
+                <div class="price-card fade-in">
+                    <h3 class="plan-name">スタートアップ</h3>
+                    <p class="plan-target">月間広告費100万円〜</p>
+                    <div class="plan-price">60万円<span>/月</span></div>
+                    <ul class="plan-features">
+                        <li>基本プログラム</li>
+                        <li>月2回コンサルティング</li>
+                        <li>戦略フレームワーク提供</li>
+                        <li>AI活用基礎レクチャー</li>
+                        <li>メールサポート</li>
+                    </ul>
+                    <a href="#contact" class="plan-button">申し込む</a>
+                </div>
+                <div class="price-card featured fade-in">
+                    <h3 class="plan-name">中堅企業</h3>
+                    <p class="plan-target">月間広告費500万円〜</p>
+                    <div class="plan-price">100万円<span>/月</span></div>
+                    <ul class="plan-features">
+                        <li>基本プログラム</li>
+                        <li>月4回コンサルティング</li>
+                        <li>制作体制構築支援</li>
+                        <li>外注パートナー紹介</li>
+                        <li>AI活用実践サポート</li>
+                        <li>優先サポート</li>
+                    </ul>
+                    <a href="#contact" class="plan-button">申し込む</a>
+                </div>
+                <div class="price-card fade-in">
+                    <h3 class="plan-name">大企業</h3>
+                    <p class="plan-target">月間広告費1000万円〜</p>
+                    <div class="plan-price">150万円<span>/月</span></div>
+                    <ul class="plan-features">
+                        <li>フルサービス</li>
+                        <li>専任コンサルタント</li>
+                        <li>オペレーション代行</li>
+                        <li>制作進行管理</li>
+                        <li>24時間サポート</li>
+                        <li>成果保証オプション</li>
+                    </ul>
+                    <a href="#contact" class="plan-button">申し込む</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 比較セクション -->
+    <section class="comparison">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-badge">COMPARISON</div>
+                <h2 class="section-title">従来手法との比較</h2>
+                <p class="section-subtitle">内製化による圧倒的なコストパフォーマンス</p>
+            </div>
+            <div class="comparison-table fade-in">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>項目</th>
+                            <th>従来（代理店委託）</th>
+                            <th class="highlight">InHouse Creative Studio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>月額コスト</td>
+                            <td>手数料20%<br>（媒体費500万円で100万円〜）</td>
+                            <td class="highlight">60万円〜</td>
+                        </tr>
+                        <tr>
+                            <td>年間削減効果</td>
+                            <td>-</td>
+                            <td class="highlight">840万円〜</td>
+                        </tr>
+                        <tr>
+                            <td>制作スピード</td>
+                            <td>1週間</td>
+                            <td class="highlight">2日</td>
+                        </tr>
+                        <tr>
+                            <td>戦略性</td>
+                            <td>限定的</td>
+                            <td class="highlight">高度な戦略フレームワーク</td>
+                        </tr>
+                        <tr>
+                            <td>ナレッジ蓄積</td>
+                            <td>限定的</td>
+                            <td class="highlight">完全内製化</td>
+                        </tr>
+                        <tr>
+                            <td>AI活用</td>
+                            <td>なし</td>
+                            <td class="highlight">最新AI技術を実装</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 成果セクション -->
+    <section class="results" id="results">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-badge">RESULTS</div>
+                <h2 class="section-title">導入効果</h2>
+                <p class="section-subtitle">数字で証明される圧倒的な成果</p>
+            </div>
+            <div class="results-grid">
+                <div class="result-card fade-in">
+                    <div class="result-icon">💰</div>
+                    <div class="result-number">840万円</div>
+                    <div class="result-label">年間コスト削減</div>
+                </div>
+                <div class="result-card fade-in">
+                    <div class="result-icon">⚡</div>
+                    <div class="result-number">65%</div>
+                    <div class="result-label">制作時間短縮</div>
+                </div>
+                <div class="result-card fade-in">
+                    <div class="result-icon">📈</div>
+                    <div class="result-number">32%</div>
+                    <div class="result-label">CPA改善率</div>
+                </div>
+                <div class="result-card fade-in">
+                    <div class="result-icon">🎯</div>
+                    <div class="result-number">2.1倍</div>
+                    <div class="result-label">ROAS向上</div>
+                </div>
+                <div class="result-card fade-in">
+                    <div class="result-icon">🚀</div>
+                    <div class="result-number">1.8倍</div>
+                    <div class="result-label">新規獲得数増加</div>
+                </div>
+                <div class="result-card fade-in">
+                    <div class="result-icon">🔄</div>
+                    <div class="result-number">3倍</div>
+                    <div class="result-label">検証速度向上</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 事例セクション -->
+    <section class="case-studies">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-badge">CASE STUDY</div>
+                <h2 class="section-title">成功事例</h2>
+                <p class="section-subtitle">実際の導入企業様の成果</p>
+            </div>
+            <div class="case-grid">
+                <div class="case-card fade-in">
+                    <div class="case-header">
+                        <h3 class="case-company">美容サプリメントA社</h3>
+                        <p class="case-industry">健康食品 / 従業員数50名</p>
+                    </div>
+                    <div class="case-body">
+                        <div class="case-challenge">
+                            <h4>課題</h4>
+                            <ul>
+                                <li>• 月額手数料200万円の負担</li>
+                                <li>• クリエイティブの戦略性不足</li>
+                                <li>• PDCAサイクルの遅さ</li>
+                            </ul>
+                        </div>
+                        <div class="case-results">
+                            <h4>成果（6ヶ月後）</h4>
+                            <div class="case-metric">
+                                <span class="case-metric-label">CPA</span>
+                                <span class="case-metric-value">40%改善</span>
+                            </div>
+                            <div class="case-metric">
+                                <span class="case-metric-label">新規獲得数</span>
+                                <span class="case-metric-value">2.3倍</span>
+                            </div>
+                            <div class="case-metric">
+                                <span class="case-metric-label">コスト削減</span>
+                                <span class="case-metric-value">年間1,200万円</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="case-card fade-in">
+                    <div class="case-header">
+                        <h3 class="case-company">アパレルEC B社</h3>
+                        <p class="case-industry">ファッション / 従業員数100名</p>
+                    </div>
+                    <div class="case-body">
+                        <div class="case-challenge">
+                            <h4>課題</h4>
+                            <ul>
+                                <li>• 外注制作費月300万円</li>
+                                <li>• ブランド一貫性の欠如</li>
+                                <li>• 競合に対する差別化不足</li>
+                            </ul>
+                        </div>
+                        <div class="case-results">
+                            <h4>成果（6ヶ月後）</h4>
+                            <div class="case-metric">
+                                <span class="case-metric-label">ROAS</span>
+                                <span class="case-metric-value">1.9倍向上</span>
+                            </div>
+                            <div class="case-metric">
+                                <span class="case-metric-label">制作コスト</span>
+                                <span class="case-metric-value">70%削減</span>
+                            </div>
+                            <div class="case-metric">
+                                <span class="case-metric-label">LTV</span>
+                                <span class="case-metric-value">1.6倍向上</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="case-card fade-in">
+                    <div class="case-header">
+                        <h3 class="case-company">化粧品D2C C社</h3>
+                        <p class="case-industry">美容 / 従業員数30名</p>
+                    </div>
+                    <div class="case-body">
+                        <div class="case-challenge">
+                            <h4>課題</h4>
+                            <ul>
+                                <li>• 新規獲得の伸び悩み</li>
+                                <li>• クリエイティブの枯渇</li>
+                                <li>• 生成AI活用の遅れ</li>
+                            </ul>
+                        </div>
+                        <div class="case-results">
+                            <h4>成果（6ヶ月後）</h4>
+                            <div class="case-metric">
+                                <span class="case-metric-label">新規獲得</span>
+                                <span class="case-metric-value">2.8倍</span>
+                            </div>
+                            <div class="case-metric">
+                                <span class="case-metric-label">制作本数</span>
+                                <span class="case-metric-value">5倍増加</span>
+                            </div>
+                            <div class="case-metric">
+                                <span class="case-metric-label">CVR</span>
+                                <span class="case-metric-value">45%向上</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTAセクション -->
+    <section class="cta" id="contact">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="fade-in">今すぐクリエイティブ運用を変革しませんか？</h2>
+                <p class="fade-in">まずは無料相談から。御社の課題と目標をお聞かせください。</p>
+                <form class="cta-form fade-in" onsubmit="handleSubmit(event)">
+                    <input type="email" class="cta-input" placeholder="メールアドレスを入力" required>
+                    <button type="submit" class="cta-submit">無料相談を申し込む</button>
+                </form>
+                <p class="cta-note fade-in">※24時間以内に担当コンサルタントよりご連絡させていただきます</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- フッター -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>InHouse Creative Studio</h3>
+                    <p>戦略的クリエイティブ運用の<br>完全内製化支援サービス</p>
+                    <p style="margin-top: 20px;">運営: 株式会社CYANd</p>
+                </div>
+                <div class="footer-column">
+                    <h3>サービス</h3>
+                    <ul>
+                        <li><a href="#solution">戦略フレームワーク</a></li>
+                        <li><a href="#curriculum">カリキュラム</a></li>
+                        <li><a href="#pricing">料金プラン</a></li>
+                        <li><a href="#results">導入効果</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>会社情報</h3>
+                    <ul>
+                        <li><a href="#">会社概要</a></li>
+                        <li><a href="#">StockSun広告運用道場</a></li>
+                        <li><a href="#">プライバシーポリシー</a></li>
+                        <li><a href="#">利用規約</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>お問い合わせ</h3>
+                    <ul>
+                        <li>TEL: 03-xxxx-xxxx</li>
+                        <li>Email: info@cyand.co.jp</li>
+                        <li>営業時間: 平日 10:00-19:00</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 株式会社CYANd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // スクロールアニメーション
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // スムーススクロール
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // フォーム送信
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert('お問い合わせありがとうございます！24時間以内に担当コンサルタントよりご連絡させていただきます。');
+            event.target.reset();
+        }
+        
+        // ヘッダーのスクロール処理
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.pageYOffset > 100) {
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.15)';
+            } else {
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.08)';
+            }
+        });
+    </script>
+</body>
+</html>
